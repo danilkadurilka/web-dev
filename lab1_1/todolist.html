@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <link rel="stylesheet" href="todostyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="todolist-main">
+        <header>
+            <h1>Список дел</h1>
+            <div class="input-group">
+                <input type="text" placeholder="Новый элемент списка" class="todo-input"/>
+                <button class="btn btn-create">Создать</button>
+                <button class="btn btn-clear">Очистить всё</button>
+            </div>
+        </header>
+
+        <div class="list-wrapper">
+            <ul class="todo-list">
+
+                <li class="todo-item completed">
+                    <div class="li-todo">
+                        <label class="todo-label">
+                        <input type="checkbox" checked>
+                        <div class="text-content">
+                            <div class="task-text">Почесать кошку</div>
+                            <div class="task-date">от 14.08.2023</div>
+                        </div>
+                        </label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                </li>
+                
+                <li class="todo-item">
+                    <div class="li-todo">
+                        <label class="todo-label">
+                        <input type="checkbox">
+                        <div class="text-content">
+                            <div class="task-text">Полить картошку</div>
+                            <div class="task-date">от 04.05.2022</div>
+                        </div>
+                        </label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                </li>
+
+                <li class="todo-item">
+                    <div class="li-todo">
+                        <label class="todo-label">
+                        <input type="checkbox">
+                        <div class="text-content">
+                            <div class="task-text">Сложить в лукошко</div>
+                            <div class="task-date">от 19.05.2022</div>
+                        </div>
+                        </label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Copyright © danilkadurilka, 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
