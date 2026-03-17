@@ -336,19 +336,6 @@ button:hover
     margin: 10px 0;
 }
 
-.weather-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-}
-
-.weather-list li {
-    width: 200px;
-    margin: 0;
-}
 
 .service-card {
     display: block;
@@ -438,42 +425,6 @@ label {
     text-align: left;
 }
 
-details {
-    background: #fff;
-    padding: 20px;
-    margin: 15px auto;
-    max-width: 700px;
-    border-radius: 12px;
-    text-align: left;
-    cursor: pointer;
-    border: 1px solid #eee;
-    transition: all 0.3s;
-}
-
-details:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-details[open] {
-    background: #fff9f9;
-}
-
-summary {
-    font-weight: 600;
-    color: #333;
-    font-size: 1.1rem;
-    outline: none;
-    cursor: pointer;
-}
-
-details ul {
-    margin: 15px 0 0 20px;
-    color: #666;
-}
-
-details li {
-    margin: 5px 0;
-}
 
 #contacts ul {
     list-style: none;
@@ -501,13 +452,6 @@ details li {
 #contacts a:hover {
     color: #e63939;
     text-decoration: underline;
-}
-
-#contacts img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .footer-section {
