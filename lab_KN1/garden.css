@@ -239,19 +239,6 @@ h4 {
     text-align: left;
 }
 
-#description p, #description ul, #description ol {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-#description ul, #description ol {
-    padding-left: 40px;
-}
-
-#description li {
-    margin: 5px 0;
-}
-
 .cards-container {
     display: flex;
     gap: 30px;
@@ -275,7 +262,7 @@ h4 {
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.tour-card img {
+.service-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
