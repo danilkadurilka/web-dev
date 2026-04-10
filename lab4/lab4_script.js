@@ -12,5 +12,59 @@ function task2()
     let a = prompt("Введите первое число", "1");
     let b = prompt("Введите второе число", "2");
     let sum = Number(a) + Number(b);
-    alert('${a} + ${b} = ${sum}');
+    alert(`${a} + ${b} = ${sum}`);
 }
+
+function task3()
+{
+    for (let i = 2; i <= 10; i++)
+    {
+        if (i % 2 === 0)
+        {
+            alert(`Выведено число ${i}`);
+        }
+    }
+}
+
+function task4()
+{
+    let i = 0;
+    while (i < 3)
+    {
+        alert(`number ${i}!`);
+        i++;
+    }
+}
+
+function task5()
+{
+    let userInput;
+    let isCancel = true;
+    let final = null;
+    while (true)
+    {
+        userInput = prompt("Введите число больше 100. Отмена для выхода", "");
+        if (userInput === null)
+        {
+            isCancel = true;
+            final = "Отмена";
+            break;
+        }
+        let number = Number(userInput);
+        if (!isNaN(number) && number > 100)
+        {
+            final = number;
+            alert(`Введено число ${number}. Оно больше 100`);
+            break;
+        }
+        else
+        {
+            alert(`Введено число ${number}. Оно не больше 100. Повторите ввод!`);
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () =>
+{
+    document.getElementById("buttonTask1").addEventListener("click", task1);
+});
