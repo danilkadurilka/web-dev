@@ -28,6 +28,7 @@ input
 {
     margin: 5px 5px 5px 0;
     padding: 6px 10px;
+    field-sizing: content;
 }
 
 .out

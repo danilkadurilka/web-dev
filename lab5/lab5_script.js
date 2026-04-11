@@ -2,13 +2,11 @@ function getReversedNumbertask11(num)
 {
     let result = 0;
     let tempNum = Math.abs(Math.floor(num));
-    
     while (tempNum !== 0)
     {
         result = result * 10 + tempNum % 10;
         tempNum = Math.floor(tempNum / 10);
     }
-    
     return result;
 }
 
@@ -71,19 +69,16 @@ function task13()
     let numValue = parseFloat(numInput.value);
     let digitString = digitInput.value.trim();
     let digitValue = parseInt(digitString, 10);
-    
     if (isNaN(numValue))
     {
         document.getElementById("outTask13").innerHTML = "Ошибка: введите корректное число!";
         return;
     }
-    
     if (digitString.length !== 1 || isNaN(digitValue) || digitValue < 0 || digitValue > 9)
     {
         document.getElementById("outTask13").innerHTML = "Ошибка: введите корректную цифру от 0 до 9!";
         return;
     }
-    
     let funcResult = countDigitInNumberTask13(numValue, digitValue);
     let message = `В числе ${numValue} цифра ${digitValue} встречается ${funcResult} раз(а)`;
     document.getElementById("outTask13").innerHTML = message;   
@@ -132,10 +127,93 @@ function task14()
     document.getElementById("outTask14").innerHTML = result.replace(/\n/g, "<br>"); //g заменяет все вхождения, а не только первое
 }
 
+function firstUniqueSymbolTask21(str)
+{
+    for (let i = 0; i < str.length; i++)
+    {
+        let unique = true;
+        for (let j = 0; j < str.length; j++)
+        {
+            if (i !== j && str[i] === str[j])
+            {
+                unique = false;
+                break;
+            }
+        }
+        if (unique)
+        {
+            return str[i];
+        }
+    }
+    return null;
+}
+
+function task21()
+{
+    let input = document.getElementById("inputString21").value;
+    let result = firstUniqueSymbolTask21(input);
+    if (result === null)
+        document.getElementById("outTask21").innerHTML = "Нет неповторяющихся символов";
+    else
+        document.getElementById("outTask21").innerHTML = "Первый неповторяющийся символ: '" + result + "'";
+}
+
+function generateStringTask22(length)
+{
+    let symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++)
+    {
+        let randomIndex = Math.floor(Math.random() * symbols.length);
+        result += symbols[randomIndex];
+    }
+    return result;
+}
+
+function task22()
+{
+    let input = document.getElementById("strLength22").value;
+    let length = parseInt(input, 10);
+    if (isNaN(length) || length <= 0)
+    {
+        document.getElementById("outTask22").innerHTML = "Ошибка: введите положительное число!";
+        return;
+    }
+    let result = generateStringTask22(length);
+    document.getElementById("outTask22").innerHTML = "Случайная строка: '" + result + "'";
+}
+
+function removeDuplicateSymbolsTask23(str)
+{
+    let result = '';
+    for (let i = 0; i < str.length; i++)
+    {
+        if (result.indexOf(str[i]) === -1)
+            result += str[i];
+    }
+    return result;
+}
+
+function task23()
+{
+    let strInput = document.getElementById("inputString23").value;
+    if (strInput.length === 0)
+    {
+        document.getElementById("outTask23").innerHTML = "Ошибка: введите строку!";
+        return;
+    }
+    let funcResult = removeDuplicateSymbolsTask23(strInput);
+    let message = `Строка без дублирующихся символов: ${funcResult}`;
+    document.getElementById("outTask23").innerHTML = message;
+}
+
 document.addEventListener("DOMContentLoaded", () =>
 {
     document.getElementById("buttonTask11").addEventListener("click", task11);
     document.getElementById("buttonTask12").addEventListener("click", task12);
     document.getElementById("buttonTask13").addEventListener("click", task13);
     document.getElementById("buttonTask14").addEventListener("click", task14);
+    document.getElementById("buttonTask21").addEventListener("click", task21);
+    document.getElementById("buttonTask22").addEventListener("click", task22);
+    document.getElementById("buttonTask23").addEventListener("click", task23);
 });
