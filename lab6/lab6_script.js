@@ -106,6 +106,55 @@ function task22()
     document.getElementById("outTask22").innerHTML = `Плоский массив:<br>[${result.join(', ')}]`;
 }
 
+function countSumPairsTask31(arr) 
+{
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) 
+    {
+        for (let j = i + 1; j < arr.length; j++) 
+        {
+            if (arr[i] + arr[j] === 0) 
+                count++;
+        }
+    }
+    return count;
+}
+
+function task31()
+{
+    let input = document.getElementById("inputArray31").value;
+    let arr = input.split(',').map(item => parseFloat(item.trim())).filter(n => !isNaN(n));
+    let result = countSumPairsTask31(arr);
+    let message = `Количество пар с суммой 0: ${result}`;
+    document.getElementById("outTask31").innerHTML = message;
+}
+
+function countSumTriplesTask32(arr) 
+{
+    let count = 0;
+    for (let x = 0; x < arr.length-2; x++) 
+    {
+        for (let y = x + 1; y < arr.length-1; y++) 
+        {
+            for (let z = y + 1; z < arr.length; z++) 
+            {
+                if (arr[x] + arr[y] + arr[z] === 0) 
+                    count++;
+            }
+        }
+    }
+    return count;
+}
+
+function task32()
+{
+    let input = document.getElementById("inputArray32").value;
+    let arr = input.split(',').map(item => parseFloat(item.trim())).filter(n => !isNaN(n));
+    let result = countSumTriplesTask32(arr);
+    let message = `Количество троек чисел с суммой 0: ${result}`;
+    document.getElementById("outTask32").innerHTML = message;
+}
+
 document.addEventListener("DOMContentLoaded", () =>
 {
     document.getElementById("buttonTask11").addEventListener("click", task11);
@@ -113,4 +162,6 @@ document.addEventListener("DOMContentLoaded", () =>
     document.getElementById("buttonTask13").addEventListener("click", task13);
     document.getElementById("buttonTask21").addEventListener("click", task21);
     document.getElementById("buttonTask22").addEventListener("click", task22);
+    document.getElementById("buttonTask31").addEventListener("click", task31);
+    document.getElementById("buttonTask32").addEventListener("click", task32);
 });
