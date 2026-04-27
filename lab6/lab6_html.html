@@ -12,7 +12,7 @@
 
     <div class="task">
         <h2>Задача 1.1 Найти максимальную разницу между элементами массива</h2>
-        <label>Введите массив чисел (через запятую):</label>
+        <label>Введите массив чисел (элементы массива вводите через запятую):</label>
         <input type="text" id="inputArray11" value="5, 12, 3, 8, 20, 1">
         <button id="buttonTask11">Выполнить</button>
         <div class="out" id="outTask11">~нажмите кнопочку~</div>
@@ -20,7 +20,7 @@
 
     <div class="task">
         <h2>Задача 1.2 Вернуть массив без повторяющихся элементов</h2>
-        <label>Введите массив (через запятую):</label>
+        <label>Введите массив чисел (элементы массива вводите через запятую):</label>
         <input type="text" id="inputArray12" value="1, 2, 2, 3, 4, 4, 4, 5">
         <button id="buttonTask12">Выполнить</button>
         <div class="out" id="outTask12">~нажмите кнопочку~</div>
@@ -29,7 +29,7 @@
     <div class="task">
         <h2>Задача 1.3 Вернуть только те элементы массива, у которых значение isDone === true</h2>
         <label>Исходный массив объектов:</label>
-        <div class="code-sample">
+        <div class="arraySample">
             [
                 {id: 1, isDone: true}, 
                 {id: 2, isDone: false},
@@ -39,6 +39,25 @@
         </div>
         <button id="buttonTask13">Выполнить</button>
         <div class="out" id="outTask13">~нажмите кнопочку~</div>
+    </div>
+
+    <div class="task">
+        <h2>Задача 2.1 Найти элементы массива, которые больше указанного числа</h2>
+        <label>Введите массив чисел (элементы массива вводите через запятую):</label>
+        <input type="text" id="inputArray21" value="1, 4, 6, 3, 2">
+        <br><br>
+        <label>Введите число, которое нужно проверить:</label>
+        <input type="number" id="inputNumber21" value="2">
+        <button id="buttonTask21">Выполнить</button>
+        <div class="out" id="outTask21">~нажмите кнопочку~</div>
+    </div>
+
+    <div class="task">
+        <h2>Задача 2.2 Из многомерного массива произвольной вложенности сделать "плоский" массив</h2>
+        <label>Введите массив чисел (элементы массива вводите через запятую):</label>
+        <input type="text" id="inputArray22" value="[1, 4, [34, 1, 20], [6, [6, 12, 8], 6]]">
+        <button id="buttonTask22">Выполнить</button>
+        <div class="out" id="outTask22">~нажмите кнопочку~</div>
     </div>
 
     <script src="lab6_script.js"></script>

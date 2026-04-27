@@ -32,7 +32,7 @@ function task12()
     let input = document.getElementById("inputArray12").value;
     let arr = input.split(',').map(item => parseFloat(item.trim())).filter(n => !isNaN(n));
     let result = removeDuplicateElementsTask12(arr);
-    let message = `Массив без дубликатов: ${result}<br>`;
+    let message = `Массив без дубликатов: [${result.join(', ')}]`;
     document.getElementById("outTask12").innerHTML = message;
 }
 
@@ -60,9 +60,57 @@ function task13()
     document.getElementById("outTask13").innerHTML = message;   
 }
 
+function getGreaterThanNumberTask21(arr, num) 
+{
+    return arr.filter(item => item > num);
+}
+
+function task21()
+{
+    let inputArr = document.getElementById("inputArray21").value;
+    let inputNum = document.getElementById("inputNumber21").value;
+    let arr = inputArr.split(',').map(item => parseFloat(item.trim())).filter(n => !isNaN(n));
+    if (isNaN(inputNum)) 
+    {
+        document.getElementById("outTask21").innerHTML = "Ошибка! Введите корректное число!";
+        return;
+    }
+    let result = getGreaterThanNumberTask21(arr, inputNum);
+    let message = `Элементы массива, которые больше ${inputNum}: ${result}<br>`;
+    document.getElementById("outTask21").innerHTML = message;
+}
+
+function getArrays22(arr) 
+{
+    let result = [];
+    for (let item of arr) 
+    {
+        if (Array.isArray(item)) 
+            result = result.concat(getArrays22(item)); 
+        else
+            result.push(item);
+    }
+    return result;
+}
+
+function task22()
+{
+    let inputStr = document.getElementById("inputArray22").value;
+    let inputArr = JSON.parse(inputStr);
+    if (!Array.isArray(inputArr)) 
+    {
+        document.getElementById("outTask22").innerHTML = "Ошибка: введите корректный массив! Пример: [1, 4, [34, 1, 20]]";
+        return;
+    }
+    let result = getArrays22(inputArr);
+    document.getElementById("outTask22").innerHTML = `Плоский массив:<br>[${result.join(', ')}]`;
+}
+
 document.addEventListener("DOMContentLoaded", () =>
 {
     document.getElementById("buttonTask11").addEventListener("click", task11);
     document.getElementById("buttonTask12").addEventListener("click", task12);
     document.getElementById("buttonTask13").addEventListener("click", task13);
+    document.getElementById("buttonTask21").addEventListener("click", task21);
+    document.getElementById("buttonTask22").addEventListener("click", task22);
 });
