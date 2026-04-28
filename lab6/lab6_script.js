@@ -155,6 +155,103 @@ function task32()
     document.getElementById("outTask32").innerHTML = message;
 }
 
+function* randomNumberTaskA1(n, m) 
+{
+    while (true) 
+        yield n + Math.random() * (m - n);
+}
+
+function taskA1() 
+{
+    let num1 = Number(document.getElementById("inputNumber1A1").value);
+    let num2 = Number(document.getElementById("inputNumber2A1").value);
+    let funcResult = randomNumberTaskA1(num1, num2);
+    let randomValue = parseInt(funcResult.next().value);
+    let message = `Случайное число из диапазона от ${num1} до ${num2}: ${randomValue}`;
+    document.getElementById("outTaskA1").innerHTML = message;
+
+}
+
+function* padovanSequenceTaskA2()
+{
+    let p0 = 1n, p1 = 1n, p2 = 1n;
+    let index = 0;
+    while (true) 
+    {
+        if (index === 0) 
+            yield p0;
+        else if (index === 1) 
+            yield p1;
+        else if (index === 2)
+            yield p2;
+        else 
+        {
+            const next = p1 + p0;  // P(n) = P(n-2) + P(n-3)
+            p0 = p1;
+            p1 = p2;
+            p2 = next;
+            yield next;
+        }
+        index++;
+    }
+}
+
+function taskA2()
+{
+    let randomPadovanValue = parseInt(padovanSequenceTaskA2().next().value);
+    let message = `Случайное число из последовательности Падована: ${randomPadovanValue}`;
+    document.getElementById("outTaskA2").innerHTML = message;
+}
+
+function* generateRandomPrimeTaskA3()
+{
+    let num = Math.floor(Math.random() * 100) + 2;
+    while (true) 
+    {
+        let isPrime = true;
+        for (let i = 2; i < num; i++) 
+        {
+            if (num % i === 0) 
+            {
+                isPrime = false;
+                break;
+            }
+        }  
+        if (isPrime) 
+            yield num;
+        num++;
+    }
+}
+
+function taskA3()
+{
+    let randomPrimeValue = generateRandomPrimeTaskA3().next().value;
+    let message = `Случайное простое число: ${randomPrimeValue}`;
+    document.getElementById("outTaskA3").innerHTML = message;
+}
+
+function countLetters(str) 
+{
+    const letterMap = new Map();
+    for (const char of str) 
+    {
+        if (char.match(/[а-яА-Яa-zA-Z]/)) 
+        {
+            const lowerChar = char.toLowerCase();
+            letterMap.set(lowerChar, (letterMap.get(lowerChar) || 0) + 1);
+        }
+    }
+    return letterMap;
+}
+/*
+function taskB1()
+{
+    let input = document.getElementById("inputStrB1").value;
+    let funcResult = countLetters(input);
+    let message = `Количество букв в строке: ${funcResult}`;
+    document.getElementById("outTaskB1").innerHTML = message;
+}
+*/
 document.addEventListener("DOMContentLoaded", () =>
 {
     document.getElementById("buttonTask11").addEventListener("click", task11);
@@ -164,4 +261,8 @@ document.addEventListener("DOMContentLoaded", () =>
     document.getElementById("buttonTask22").addEventListener("click", task22);
     document.getElementById("buttonTask31").addEventListener("click", task31);
     document.getElementById("buttonTask32").addEventListener("click", task32);
+    document.getElementById("buttonTaskA1").addEventListener("click", taskA1);
+    document.getElementById("buttonTaskA2").addEventListener("click", taskA2);
+    document.getElementById("buttonTaskA3").addEventListener("click", taskA3);
+    //document.getElementById("buttonTaskB1").addEventListener("click", taskB1);
 });
