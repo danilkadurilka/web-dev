@@ -230,28 +230,62 @@ function taskA3()
     document.getElementById("outTaskA3").innerHTML = message;
 }
 
-function countLetters(str) 
+function countCharactersTaskB1(str) 
 {
-    const letterMap = new Map();
-    for (const char of str) 
+    const charMap = new Map();
+    const letters = str.match(/\p{L}/gu);
+    for (const char of letters) 
     {
-        if (char.match(/[а-яА-Яa-zA-Z]/)) 
-        {
-            const lowerChar = char.toLowerCase();
-            letterMap.set(lowerChar, (letterMap.get(lowerChar) || 0) + 1);
-        }
+        const lowerChar = char.toLowerCase(); 
+        const count = charMap.get(lowerChar) || 0;
+        charMap.set(lowerChar, count + 1);
     }
-    return letterMap;
+    return charMap;
 }
-/*
+
 function taskB1()
 {
     let input = document.getElementById("inputStrB1").value;
-    let funcResult = countLetters(input);
-    let message = `Количество букв в строке: ${funcResult}`;
+    let charMap = countCharactersTaskB1(input);
+    let resultString = "";
+    for (let [char, count] of charMap) 
+    {
+        resultString += `'${char}': ${count}; `;
+    }
+    let message = resultString || "Буквы не найдены";
     document.getElementById("outTaskB1").innerHTML = message;
 }
-*/
+
+function getPrimeTaskB2(n)
+{
+    let count = 0;
+    let currentNum = 1n;
+    while (count < n) 
+    {
+        currentNum++;
+        let isPrime = true;
+        for (let i = 2n; i < currentNum; i++) 
+        {
+            if (currentNum % i === 0n) 
+            {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime)
+            count++;
+    }
+    return currentNum;
+}
+
+function taskB2() 
+{
+    let num = BigInt(document.getElementById("inputNumberB2").value);
+    let funcResult = getPrimeTaskB2(num);
+    let message = `${num}-ное простое число = ${funcResult}`;
+    document.getElementById("outTaskB2").innerHTML = message;
+}
+
 document.addEventListener("DOMContentLoaded", () =>
 {
     document.getElementById("buttonTask11").addEventListener("click", task11);
@@ -264,5 +298,6 @@ document.addEventListener("DOMContentLoaded", () =>
     document.getElementById("buttonTaskA1").addEventListener("click", taskA1);
     document.getElementById("buttonTaskA2").addEventListener("click", taskA2);
     document.getElementById("buttonTaskA3").addEventListener("click", taskA3);
-    //document.getElementById("buttonTaskB1").addEventListener("click", taskB1);
+    document.getElementById("buttonTaskB1").addEventListener("click", taskB1);
+    document.getElementById("buttonTaskB2").addEventListener("click", taskB2);
 });
