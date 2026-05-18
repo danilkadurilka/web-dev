@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа 8. Асинхронный код в JavaScript</title>
+    <link rel="stylesheet" href="lab8_style.css">
+    <link rel="icon" href="lab8.ico">
+</head>
+
+<body>
+    <h1>Лабораторная работа 8. Асинхронный код в JavaScript</h1>
+
+    <div class="task">
+        <h2>Задача 1.1 Написать функцию, которая выводит в консоль раз в секунду числа n, n-1 ... 2, 1, 0 и останавливается.</h2>
+        <label>Введите число n, с которого нужно начинать отсчет:</label>
+        <input type="number" id="inputNumber11" value="10">
+        <button id="buttonTask11">Посчитать</button>
+        <div class="out" id="outTask11">~нажмите кнопочку и начнется <i>magic</i>~</div>
+    </div>
+
+    <div class="task">
+        <h2>Задача 1.2 Написать функцию createCounter(n), возвращающую объект с методами:<br>
+            start() -- запускает (или возобновляет) счётчик c интервалом 1 секунда: N, N-1.<br>
+            pause() -- приостанавливает счёт, но не сбрасывает счётчик.<br>
+            stop() -- останавливает счёт, сбрасывает счётчик.</h2>
+        <label>Введите число n, с которого нужно начинать отсчет:</label>
+        <input type="number" id="inputNumber12" value="10">
+        <button id="buttonStartTask12">Запуск</button>
+        <button id="buttonPauseTask12">Пауза</button>
+        <button id="buttonStopTask12">Сброс</button>
+        <div class="out" id="outTask12">~нажмите нужную кнопочку~</div>
+    </div>
+
+    <div class="task">
+        <h2>Задача 2.1 Написать функцию delay(N), возвращающую промис, который сделает resolve() через N секунд.</h2>
+        <label>Введите число N - количество секунд:</label>
+        <input type="number" id="inputNumber21" value="10">
+        <button id="buttonTask21">Жмяк</button>
+        <div class="out" id="outTask21">~нажмите кнопочку~</div>
+    </div>
+
+    <div class="task">
+        <h2>Задача 2.2 Решить задачу со счётчиком N, N-1 ... 2, 1, 0 через функцию delay</h2>
+        <label>Введите число n, с которого нужно начинать отсчет:</label>
+        <input type="number" id="inputNumber22" value="10">
+        <button id="buttonTask22">Посчитать</button>
+        <div class="out" id="outTask22">~нажмите кнопочку и начнется <i>magic</i>~</div>
+    </div>
+
+    <div class="task">
+        <h2>Задача 2.3 Написать функцию, возвращающую название первого репозитория на github.com по имени пользователя (2 последовательных запроса: https://api.github.com/users/%USERNAME%).</h2>
+        <label>Введите имя пользователя на платформе GitHub:</label>
+        <input type="text" id="inputName23" value="goryachkinama">
+        <button id="buttonTask23">Выполнить</button>
+        <div class="out" id="outTask23">~нажмите кнопочку~</div>
+    </div>
+
+    <div class="task">
+        <h2>Задача 3 Перепишите, используя async/await вместо .then/catch.</h2>
+        <button id="buttonTask3">Выполнить</button>
+    </div>
+
+    <script src="lab8_script.js"></script>
+</body>
+</html>
