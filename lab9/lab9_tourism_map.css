@@ -597,3 +597,131 @@ svg {
     fill: #ff4d4d;
     font-weight: bold;
 }
+
+.world-map-section 
+{
+    background: linear-gradient(135deg, #e8f4f8 0%, #d4eaf0 100%);
+    padding: 60px 20px;
+}
+    
+.world-map-container 
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+#world-map 
+{
+    height: 500px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.continent-buttons 
+{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.continent-btn 
+{
+    background: linear-gradient(135deg, #ff4d4d, #e63939);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.continent-btn:hover 
+{
+    transform: translateY(-3px);
+}
+
+.continent-btn:active 
+{
+    transform: translateY(0);
+}
+
+.continent-btn.europe 
+{
+    background: linear-gradient(135deg, #2196F3, #0d47a1);
+}
+.continent-btn.asia 
+{
+    background: linear-gradient(135deg, #4CAF50, #1b5e20);
+}
+.continent-btn.america 
+{
+    background: linear-gradient(135deg, #FF9800, #e65100);
+}
+.continent-btn.africa 
+{
+    background: linear-gradient(135deg, #9C27B0, #4a148c);
+}
+
+.map-status 
+{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    padding: 8px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-legend 
+{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+
+.legend-item 
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color 
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff4d4d;
+}
+
+.legend-color.circle 
+{
+    background: rgba(255, 77, 77, 0.3);
+}
+
+@media (max-width: 768px) 
+{
+    #world-map 
+    {
+        height: 350px;
+    }
+    .continent-btn 
+    {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
