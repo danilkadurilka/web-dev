@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Туризм в Швеции</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lab9_tourism_map.css">
+    <link rel="icon" href="lab9_tourism_map.ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">VISITSWEDEN</a>
+            <ul class="nav-list">
+                <li><a href="#tours">Наши туры</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li class="dropdown">
+                    <a href="#description">Описание</a>
+                    <ul class="submenu">
+                        <li><a href="#capital">Столица</a></li>
+                        <li><a href="#nature">Природа</a></li>
+                        <li><a href="#culture">Культура</a></li>
+                        <li><a href="#ecology">Экология</a></li>
+                        <li><a href="#history">История</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#weather">Погода</a>
+                    <ul class="submenu">
+                        <li><a href="https://yandex.ru/pogoda/ru/stockholm">Стокгольм</a></li>
+                        <li><a href="https://yandex.ru/pogoda/ru/gothenburg">Гётебург</a></li>
+                        <li><a href="https://yandex.ru/pogoda/ru/malmo">Мальмё</a></li>
+                        <li><a href="https://yandex.ru/pogoda/ru/uppsala">Уппсала</a></li>
+                        <li><a href="https://yandex.ru/pogoda/ru/helsingborg">Хельсингбург</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">О стране</a></li>
+                <li><a href="#callback">Вопрос</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#map">Карта регионов</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="countryname" class="hero-section">
+        <h3>Швеция</h3>
+    </div>
+
+    <div id="tours" class="section">
+        <h2>Наши туры</h2>
+        <div class="cards-container">
+            <div class="card tour-card">
+                <img src="https://plus.unsplash.com/premium_photo-1697730072845-96af3243f57a?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3RvY2tob2xtfGVufDB8fDB8fHwwq=80&w=500" alt="Стокгольм">
+                <div class="card-info">
+                    <h3>Тур в Стокгольм</h3>
+                    <p>Прогулки по Гамластану и музеям столицы.</p>
+                    <button>Забронировать</button>
+                </div>
+            </div>
+            <div class="card tour-card">
+                <img src="https://images.unsplash.com/photo-1694704606055-9e30c5fea927?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3dlZGlzaCUyMGxhcGxhbmR8ZW58MHx8MHx8fDA%3D?q=80&w=500" alt="Лапландия">
+                <div class="card-info">
+                    <h3>Магия Лапландии</h3>
+                    <p>Северное сияние и знакомство с оленями.</p>
+                    <button>Забронировать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery" class="section carousel-section">
+        <h2>Галерея Швеции</h2>
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=1600" alt="Стокгольм">
+                    <div class="carousel-caption">Стокгольм - столица на 14 островах</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1556802142-ad181001e013?q=80&w=1600" alt="Мальмё">
+                    <div class="carousel-caption">Мальмё - Turning Torso и старый город</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1548194128-2e8440ccd6d7?q=80&w=1600" alt="Гётебург">
+                    <div class="carousel-caption">Гётебург - второй по величине город Швеции</div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-indicators">
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+
+    <div id="reviews" class="section">
+        <h2>Отзывы наших клиентов</h2>
+        <div class="cards-container">
+            <div class="card review-item">
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjWib_9Z9wrFnJv_5SThEkDmG_geDbYuOQGx6B9ms5uT6dXTWLw=s300-p-k-rw-no" alt="Геннадий">
+                <p><i>"Потрясающая поездка! Организация на высшем уровне, а природа Швеции просто влюбила в себя."</i></p>
+                <p><b>— Геннадий Ломакин</b></p>
+            </div>
+            <div class="card review-item">
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjWP6puL5tmnFK_ZR0gz6srNGEU8uzCYi4W_Bf_nmJqmp0Ozmnw=s300-p-k-rw-no" alt="Виталий">
+                <p><i>"Очень понравился гастрономический тур. Фика — теперь моя любимая традиция!"</i></p>
+                <p><b>— Виталий Плотников</b></p>
+            </div>
+            <div class="card review-item">
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjU36K7vgkv7Ofsy5HGdVrcSiMTiWa4q8wcg4dfBP-MO1GyxqAY=s300-p-k-rw-no" alt="Татьяна">
+                <p><i>"Мне понравился тур! Теперь моя любимая традиция посещать Лапландию!"</i></p>
+                <p><b>— Татьяна Ярославцева</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="description" class="section">
+        <h2>Описание</h2>
+        <p><b>Швеция</b> — страна, в которой органично переплетаются вековые традиции и ультрасовременные тенденции, предлагая путешественникам поистине уникальный опыт. 
+        От шумных мегаполисов с их футуристической архитектурой до первозданных просторов северной природы, Швеция манит своим разнообразием и непередаваемой атмосферой.</p><br>
+
+        <h3 id="capital">Столица на островах</h3>
+        <p>Столица, <i>Стокгольм</i>, раскинувшаяся на четырнадцати островах, является настоящей жемчужиной. 
+        Исследуйте мощеные улочки Гамластана, старого города, с его королевским дворцом и живописными площадями. 
+        Погрузитесь в мир искусства в музеях мирового класса:</p>
+        <ul>
+            <li><b>Музей Васа</b> — с его прекрасно сохранившимся кораблем XVII века;</li>
+            <li><b>Музей ABBA</b> — где вас ждут интерактивные экспонаты.</li>
+        </ul>
+        <p>Современный Стокгольм очарует вас минималистичным дизайном, модными бутиками и оживленной ресторанной сценой.</p><br>
+
+        <h3 id="nature">Природа и Лапландия</h3>
+        <p>Но Швеция — это не только города. Выезжая за пределы столицы, вы откроете для себя страну озер, лесов и бескрайних побережий. Отправьтесь на север, в <i>Лапландию</i>, чтобы:</p>
+        <ol>
+            <li>Увидеть северное сияние;</li>
+            <li>Встретиться с оленями;</li>
+            <li>Познакомиться с культурой саамов.</li>
+        </ol>
+        <p>Прокатитесь на велосипеде по живописным сельским дорогам, окунитесь в прохладные воды кристально чистых озер или отправьтесь в поход по национальным паркам, 
+            где природа предстает во всей своей нетронутой красе.</p><br>
+
+        <h3 id="culture">Гастрономия и культура</h3>
+        <p>Шведская кухня — еще одна причина посетить эту страну. Попробуйте знаменитые фрикадельки, сельдь в различных вариациях, а также разнообразную выпечку и десерты. 
+        Не забудьте о <b>«фика»</b> — традиционном шведском перерыве на кофе с выпечкой, который является неотъемлемой частью местной культуры.</p><br>
+        <p><i>«Шведское гостеприимство известно своей теплотой и радушием. Местные жители, хоть и могут показаться сдержанными на первый взгляд, всегда готовы помочь и поделиться информацией.»</i></p><br>
+        <p>Важно помнить и быть готовым к шведскому подходу к планированию. Здесь ценятся пунктуальность и четкость, поэтому при назначении встреч или планировании мероприятий, лучше быть вовремя.</p><br>
+
+        <h3 id="ecology">Экология и активный отдых</h3>
+        <p>В Швеции особое внимание уделяется устойчивому развитию и заботе об окружающей среде. Это отражается во всем – от систем сортировки мусора до развития экологически чистого транспорта. 
+        Многие гостиницы и туристические объекты имеют экологические сертификаты.</p>
+        <p>Для любителей активного отдыха Швеция предлагает безграничные возможности:</p>
+        <ul>
+            <li><b>Зимой:</b> рай для горнолыжников и сноубордистов;</li>
+            <li><b>Летом:</b> каякинг, парусный спорт и рыбалка;</li>
+            <li><b>Круглый год:</b> пешие прогулки по тропам национальных парков.</li>
+        </ul><br>
+
+        <h3 id="history">Историческое наследие</h3>
+        <p>Нельзя не упомянуть и богатую историю Швеции, которая прослеживается в ее замках, крепостях и старинных городах. 
+            От средневековых руин до впечатляющих дворцов эпохи Возрождения, каждый уголок страны хранит свои тайны. 
+            Посещение музеев позволит глубже понять шведскую культуру и наследие, делая путешествие не только приятным, но и познавательным.</p>
+    </div>
+
+    <div id="weather" class="section">
+        <h2>Погода</h2>
+        <ul class="weather-list"> 
+            <li id="stockholm">
+                <a href="https://yandex.ru/pogoda/ru/stockholm" class="city-card">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=400" alt="Стокгольм">
+                    </div>
+                    Стокгольм
+                </a>
+            </li>
+            <li id="gothenburg">
+                <a href="https://yandex.ru/pogoda/ru/gothenburg" class="city-card">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1548194128-2e8440ccd6d7?q=80&w=400" alt="Гётебург">
+                    </div>
+                    Гётебург
+                </a>
+            </li> 
+            <li id="malmo">
+                <a href="https://yandex.ru/pogoda/ru/malmo" class="city-card">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1556802142-ad181001e013?q=80&w=400" alt="Мальмё">
+                    </div>
+                    Мальмё
+                </a>
+            </li> 
+            <li id="uppsala">
+                <a href="https://yandex.ru/pogoda/ru/uppsala" class="city-card">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1531670854490-1e1c7d7bfcb6?q=80&w=400" alt="Уппсала">
+                    </div>
+                    Уппсала
+                </a>
+            </li> 
+            <li id="helsingborg">
+                <a href="https://yandex.ru/pogoda/ru/helsingborg" class="city-card">
+                    <div class="city-image">
+                        <img src="https://images.unsplash.com/photo-1578052006453-500cb0030dc9?q=80&w=400" alt="Хельсингбург">
+                    </div>
+                    Хельсингбург
+                </a>
+            </li> 
+        </ul>
+    </div>
+
+    <div id="about" class="section">
+        <h2>О нас / О стране</h2>
+        <ul>
+            <li id="population">Население страны: >10,5 млн (на 2022-2023 гг.) </li> 
+            <li id="square">Площадь: 447 435 км²</li>
+            <li id="money">Денежная единица (валюта): Шведская крона (SEK) </li> 
+            <li id="domain">Домен: <i>.se</i></li> 
+            <li id="division">Территориальное деление: 21 лен </li> 
+        </ul>
+    </div>
+
+    <div id="callback" class="section">
+        <h2>Форма обратной связи / Задать вопрос</h2>
+        <form>
+            <label>Введите ваше имя:<br>
+                <input type="text">
+            </label><br>
+            <label>Введите сообщение:<br>
+                <textarea rows="5" cols="30"></textarea>
+            </label><br>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <div id="faq" class="section">
+        <h2>FAQ</h2>
+        <details>
+            <summary>Как добраться?</summary>
+            Добраться вы можете следующими способами:
+            <ul>
+                <li>Самолётом ✈️</li> 
+                <li>Поездом 🚆</li>
+                <li>На автомобиле 🚗</li> 
+            </ul>
+        </details>
+        <details>
+            <summary>Что посмотреть?</summary>
+            <ul>
+                <li>Достопримечательности 🏙</li> 
+                <li>Природа 🌳</li>
+                <li>Музеи 🏛</li> 
+            </ul>
+        </details>
+    </div>
+
+    <div id="map" class="section">
+    <h2>Карта регионов Швеции</h2>
+    <div class="map-container">
+            <svg viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg">
+                <rect width="500" height="700" fill="#e8f4f8" rx="10"/>
+                <g id="region-svealand">
+                    <path class="region" 
+                        d="M150,200 L350,200 L380,350 L320,400 L180,380 L120,300 Z" 
+                        fill="#4CAF50" stroke="#fff" stroke-width="3"/>
+                    <text x="230" y="280" class="region-label" text-anchor="middle">Свеаланд</text>
+                </g>
+
+                <g id="region-gotaland">
+                    <path class="region" 
+                        d="M120,380 L320,400 L380,350 L420,450 L400,580 L300,650 L150,600 L80,500 Z" 
+                        fill="#2196F3" stroke="#fff" stroke-width="3"/>
+                    <text x="250" y="500" class="region-label" text-anchor="middle">Гёталанд</text>
+                </g>
+                
+                <g id="region-norrland">
+                    <path class="region" 
+                        d="M180,30 L350,30 L380,200 L350,200 L150,200 L120,100 Z" 
+                        fill="#FF9800" stroke="#fff" stroke-width="3"/>
+                    <text x="230" y="120" class="region-label" text-anchor="middle">Норрланд</text>
+                </g>
+     
+                <g id="region-oland">
+                    <ellipse class="region" 
+                            cx="420" cy="520" rx="40" ry="60" 
+                            fill="#9C27B0" stroke="#fff" stroke-width="3"/>
+                    <text x="420" y="520" class="region-label" text-anchor="middle">Эланд</text>
+                </g>
+
+                <g id="region-gotland">
+                    <ellipse class="region" 
+                            cx="450" cy="380" rx="35" ry="45" 
+                            fill="#E91E63" stroke="#fff" stroke-width="3"/>
+                    <text x="450" y="380" class="region-label" text-anchor="middle">Готланд</text>
+                </g>
+  
+                <g class="city-dot">
+                    <circle cx="220" cy="280" r="5" fill="#fff" stroke="#333" stroke-width="2"/>
+                    <text x="230" y="275" font-size="10" fill="#333">Стокгольм</text>
+                </g>
+                
+                <g class="city-dot">
+                    <circle cx="200" cy="480" r="5" fill="#fff" stroke="#333" stroke-width="2"/>
+                    <text x="210" y="475" font-size="10" fill="#333">Гётебург</text>
+                </g>
+                
+                <g class="city-dot">
+                    <circle cx="320" cy="520" r="5" fill="#fff" stroke="#333" stroke-width="2"/>
+                    <text x="330" y="515" font-size="10" fill="#333">Мальмё</text>
+                </g>
+                
+                <g class="city-dot">
+                    <circle cx="240" cy="150" r="5" fill="#fff" stroke="#333" stroke-width="2"/>
+                    <text x="250" y="145" font-size="10" fill="#333">Кируна</text>
+                </g>
+                
+                <g class="city-dot">
+                    <circle cx="280" cy="230" r="5" fill="#fff" stroke="#333" stroke-width="2"/>
+                    <text x="290" y="225" font-size="10" fill="#333">Уппсала</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div id="contacts" class="section">
+        <h2>Контакты</h2>
+        <ul>
+            <li>☎️ Телефон: <a href="tel:+79245120258">+7 (924) 512-02-58</a></li> 
+            <li>📧 E-Mail: <a href="mailto:visitsweden@outlook.com">visitsweden@outlook.com</a></li>
+        </ul>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <p>Copyright © danilkadurilka, 2026</p>
+        </div>
+    </footer>
+
+    <script src="lab9_tourism_map.js"></script>
+
+</body>
+</html>
