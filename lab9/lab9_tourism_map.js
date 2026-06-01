@@ -90,7 +90,6 @@ function loadSwedenRegion(regionName, regionId)
                     radius: radiusInMeters,
                     weight: 5,
                     opacity: 0.9,
-                    dashArray: '8, 8'
                 }).addTo(swedenMap);
                 const statusDiv = document.getElementById('sweden-map-status');
                 statusDiv.innerHTML = `✨ ${swedenRegions[regionId].name}: ${swedenRegions[regionId].description}<br>🏙️ Города: ${swedenRegions[regionId].cities.join(', ')}<br>📌 ${swedenRegions[regionId].facts}`;
@@ -98,7 +97,6 @@ function loadSwedenRegion(regionName, regionId)
             }
         })
         .catch(error => {
-            console.log('API недоступно, использую стандартные координаты');
             const [lat, lon] = swedenRegions[regionId].center;
             if (currentCircle) 
                 swedenMap.removeLayer(currentCircle);
@@ -120,7 +118,6 @@ function loadSwedenRegion(regionName, regionId)
                 radius: radiusInMeters,
                 weight: 5,
                 opacity: 0.9,
-                dashArray: '8, 8'
             }).addTo(swedenMap);
             const statusDiv = document.getElementById('sweden-map-status');
             statusDiv.innerHTML = `✨ ${swedenRegions[regionId].name}: ${swedenRegions[regionId].description}<br>🏙️ Города: ${swedenRegions[regionId].cities.join(', ')}<br>📌 ${swedenRegions[regionId].facts}`;
