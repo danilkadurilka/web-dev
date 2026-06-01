@@ -1,0 +1,177 @@
+* 
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1639922063_1-abrakadabra-fun-p-fon-dlya-pogodi-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-app 
+{
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3rem;
+    padding: 1.5rem 1.2rem 2rem;
+    transition: all 0.2s;
+}
+
+.header 
+{
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 0.75rem;
+}
+
+.city-info 
+{
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.city-name 
+{
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.coords-badge 
+{
+    font-size: 0.7rem;
+    background: #2c3e50aa;
+    padding: 0.2rem 0.6rem;
+    border-radius: 40px;
+    color: white;
+    font-weight: 500;
+}
+
+.status-msg 
+{
+    text-align: center;
+    padding: 1rem;
+    font-weight: 500;
+    background: #ADD8E6;
+    border-radius: 60px;
+}
+
+.carousel-container 
+{
+    position: relative;
+}
+
+.carousel-track-wrapper 
+{
+    overflow: hidden;
+    border-radius: 2rem;
+}
+
+.carousel-track 
+{
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.weather-card 
+{
+    flex: 0 0 calc(33.333% - 0.67rem);
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 2rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.card-date 
+{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1e466e;
+}
+
+.card-weekday 
+{
+    font-size: 1rem;
+    color: #5a6e7c;
+    margin-bottom: 1rem;
+}
+
+.temp 
+{
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+    color: #1f2b3c;
+}
+
+.details 
+{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8rem;
+    background: #eef3fc;
+    padding: 0.6rem;
+    border-radius: 1.2rem;
+}
+
+.nav-btn 
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1f2b3ccc;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 42px;
+    height: 42px;
+    border-radius: 60px;
+    transition: 0.2s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover 
+{
+    background: #0f1a24;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.nav-prev 
+{
+    left: -45px;
+}
+
+.nav-next
+{
+    right: -45px;
+}
+
+footer 
+{
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    opacity: 0.7;
+}

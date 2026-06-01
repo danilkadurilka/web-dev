@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+    <link rel="stylesheet" href="lab10_weather.css">
+    <link rel="icon" href="lab10_weather.png">
+</head>
+<body>
+    <div class="weather-app">
+        <div class="header">
+            <div class="city-info">
+                <div class="city-name" id="cityNameDisplay"></div>
+                <div class="coords-badge" id="coordsHint"></div>
+            </div>
+        </div>
+        <div id="statusMessage" class="status-msg">🔄 Загрузка...</div>
+        <div class="carousel-container">
+            <button class="nav-btn nav-prev" id="prevBtn"><</button>
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track" id="carouselTrack"></div>
+            </div>
+            <button class="nav-btn nav-next" id="nextBtn">></button>
+        </div>
+        <footer>Прогноз погоды | Open-Meteo</footer>
+    </div>
+    <script src="lab10_weather.js"></script>
+</body>
+</html>
