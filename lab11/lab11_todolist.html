@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <link rel="stylesheet" href="lab11_todolist.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500;700&display=swap">
+    <link rel="icon" href="lab11_todolist.png">
+</head>
+
+<body>    
+<div class="todolist-main">
+
+    <header>
+        <h1>Список дел</h1>
+        <div class="input-group">
+            <input type="text" id="taskInput" class="todo-input" placeholder="Новый элемент списка (например: Почесать репу)" autocomplete="off"/>
+            <button id="createBtn" class="btn btn-create">➕ Создать</button>
+            <button id="clearAllBtn" class="btn btn-clear">🗑 Очистить всё</button>
+        </div>
+    </header>
+
+    <div class="controls-bar">
+        <div class="filter-links" id="filterLinksContainer">
+            <button data-filter="all" class="filter-link active">📋 Все</button>
+            <button data-filter="completed" class="filter-link">✅ Выполненные</button>
+            <button data-filter="active" class="filter-link">🔄 Невыполненные</button>
+        </div>
+        <button id="sortByNameBtn" class="sort-btn">🔀Сортировка по дате</button>
+    </div>
+
+    <div class="list-wrapper">
+        <ul class="todo-list" id="todoListContainer">
+            <li class="empty-message">Загрузка задач...</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Copyright © danilkadurilka, 2026 | Список дел (ToDoList)</p>
+    </footer>
+</div>
+<script src="lab11_todolist.js"></script>
+</body>
+</html>
